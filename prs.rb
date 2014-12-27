@@ -25,14 +25,21 @@ begin
   puts "=> I have selected #{computer_choice}."
   puts
 
-  win_message = ["Wow. Can't believe it. You won.", "Huh. There must be something going on inside me. You beat me.", "Can't believe my luck. You won.", "Seriously? This is almost impossible. Game is yours.", "Yippie dippidy doo. You are the winner..."]
-  user_message_win = win_message.sample
+  user_message_win = ["Wow. Can't believe it. You won.",
+                      "Huh. There must be something going on inside me. You beat me.", 
+                      "Can't believe my luck. You won.", 
+                      "Seriously? This is almost impossible. Game is yours.", 
+                      "Yippie dippidy doo. You are the winner..."].sample
 
-  lose_message = ["As usual, I'm good. You lost.", "You didn't bet your house, did you? I won.", "As expected, I won.", "You can't beat a computer. My game.", "I am the WINNER! Again: W-I-N-N-E-R!!!"]
-  user_message_lose = lose_message.sample
+  user_message_lose = ["As usual, I'm good. You lost.",
+                       "You didn't bet your house, did you? I won.",
+                       "As expected, I won.", "You can't beat a computer. My game.",
+                       "I am the WINNER! Again: W-I-N-N-E-R!!!"].sample
 
-  tie_message = ["We're tied.", "System Malfunction. Tie.", "This is weird. Tie.", "Sure. Sure. Tie game."]
-  user_message_tie = tie_message.sample
+  user_message_tie = ["We're tied.", 
+                      "System Malfunction. Tie.", 
+                      "This is weird. Tie.", 
+                      "Sure. Sure. Tie game."].sample
 
   case 
    when (user_choice == "r") && (computer_choice == game_choices[0])
