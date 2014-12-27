@@ -10,24 +10,18 @@ begin
 
   begin
 
-    if user_choice == "p"
-      paper = puts "=>You have selected #{user_options[:p]}"
-      puts
-    elsif user_choice == "r"
-      rock = puts "=>You have selected #{user_options[:r]}"
-      puts
-    elsif user_choice == "s"
-      scissors = puts "=>You have selected #{user_options[:s]}"
+    if ["p", "r", "s"].include?(user_choice)
+      puts "=> You have selected #{user_options[user_choice.to_sym]}"
       puts
     else
       puts "Please stick to the options. It's for your own good. Enter 'p' for Paper, 'r' for Rock, and 's' for Scissors: "
       user_choice = gets.chomp
     end
 
-  end until user_choice == "p" || user_choice == "r" || user_choice == "s"
+  end until ["p", "r", "s"].include?(user_choice)
 
-  game_array = ["Paper", "Rock", "Scissors"]
-  computer_choice = game_array.sample
+  game_choices = ["Paper", "Rock", "Scissors"]
+  computer_choice = game_choices.sample
   puts "=> I have selected #{computer_choice}."
   puts
 
@@ -41,31 +35,31 @@ begin
   user_message_tie = tie_message.sample
 
   case 
-   when (user_choice == "r") && (computer_choice == game_array[0])
+   when (user_choice == "r") && (computer_choice == game_choices[0])
     puts "=> " + user_message_lose
     puts
-   when (user_choice == "r") && (computer_choice == game_array[2])
+   when (user_choice == "r") && (computer_choice == game_choices[2])
     puts "=> " + user_message_win
     puts
-   when (user_choice == "p") && (computer_choice == game_array[1])
+   when (user_choice == "p") && (computer_choice == game_choices[1])
     puts "=> " + user_message_win
     puts
-   when (user_choice == "p") && (computer_choice == game_array[2])
+   when (user_choice == "p") && (computer_choice == game_choices[2])
     puts "=> " + user_message_lose
     puts
-   when (user_choice == "s") && (computer_choice == game_array[0])
+   when (user_choice == "s") && (computer_choice == game_choices[0])
     puts "=> " + user_message_win
     puts
-   when (user_choice == "s") && (computer_choice == game_array[1])
+   when (user_choice == "s") && (computer_choice == game_choices[1])
     puts "=> " + user_message_lose
     puts
-   when (user_choice == "p") && (computer_choice == game_array[0])
+   when (user_choice == "p") && (computer_choice == game_choices[0])
     puts "=> " + user_message_tie
     puts
-   when (user_choice == "r") && (computer_choice == game_array[1])
+   when (user_choice == "r") && (computer_choice == game_choices[1])
     puts "=> " + user_message_tie
     puts
-   when (user_choice == "s") && (computer_choice == game_array[2])
+   when (user_choice == "s") && (computer_choice == game_choices[2])
     puts "=> " + user_message_tie
     puts
    end 
